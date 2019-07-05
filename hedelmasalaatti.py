@@ -102,15 +102,6 @@ def intro():
 
         def most_expensive():
             try:
-                #max toiminto ei toimi
-                dynamodb = boto3.resource('dynamodb')
-                table = dynamodb.Table('hedelmasalaatti')
-                response = table.scan(
-                    FilterExpression=Attr('price').between(0, 999999999999)
-                )
-                items = response['Items'],['item'],['price']
-                #maxval = max(items, key=lambda x: x[1])
-                print(items)
 
             except ValueError:
                 print("Lista on tyhjä!")
